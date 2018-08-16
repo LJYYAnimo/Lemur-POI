@@ -10,17 +10,17 @@ public class StudentEntity implements Serializable {
     /**
      * id
      */
-    private String        id;
+    private int id;
     /**
      * 学生姓名
      */
     @Excel(name = "学生姓名", height = 20, width = 30, isImportField = "true_st")
-    private String        name;
+    private String name;
     /**
      * 学生性别
      */
     @Excel(name = "学生性别", replace = { "男_1", "女_2" }, suffix = "生", isImportField = "true_st")
-    private int           sex;
+    private int sex;
 
     @Excel(name = "出生日期", databaseFormat = "yyyyMMddHHmmss", format = "yyyy-MM-dd", isImportField = "true_st", width = 20)
     private Date birthday;
@@ -28,11 +28,11 @@ public class StudentEntity implements Serializable {
     @Excel(name = "进校日期", databaseFormat = "yyyyMMddHHmmss", format = "yyyy-MM-dd")
     private Date registrationDate;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

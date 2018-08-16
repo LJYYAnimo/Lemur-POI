@@ -2,6 +2,7 @@ package com.lemur.poi.entity;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
+import com.lemur.poi.utils.FileUtils;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
@@ -30,19 +30,11 @@ public class StudentEntityTests {
             studentEntity.setSex(1);
             studentEntity.setBirthday(new Date());
             studentEntity.setRegistrationDate(new Date());
+            list.add(studentEntity);
         }
-
         Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("计算机一班学生","学生"),
                 StudentEntity .class, list);
-        File file = new File("test.xlsx");
-        try {
-            OutputStream outputStream = new FileOutputStream(file);
-            workbook.write(outputStream);
-            outputStream.close();
-            workbook.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        FileUtils.export(workbook,"StudentEntity,xlsx");
     }
 
 }
