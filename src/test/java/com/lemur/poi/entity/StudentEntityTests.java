@@ -8,10 +8,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -34,7 +30,7 @@ public class StudentEntityTests {
         }
         Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("计算机一班学生","学生"),
                 StudentEntity .class, list);
-        FileUtils.export(workbook,"StudentEntity,xlsx");
+        FileUtils.export(workbook,"StudentEntity.xls");
     }
 
 }

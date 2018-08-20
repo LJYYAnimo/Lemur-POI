@@ -64,9 +64,9 @@ public class CourseEntityTests {
         }
         courseEntity.setStudents(studentEntities);
         list.add(courseEntity);
-        Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("2412312", "测试", "课程"),
+        Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("南京市兰溪小学", null, "课程"),
                 CourseEntity.class, list);
-        FileUtils.export(workbook,"CourseEntity.xlsx");
+        FileUtils.export(workbook,"CourseEntity.xls");
     }
 
 }

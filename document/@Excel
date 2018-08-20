@@ -1,0 +1,5 @@
+属性          类型          默认值      功能
+
+name         String        null      列名,支持name_id
+
+needMerge    boolean       fasle     是否需要纵向合并单元格(用于含有list中,单个的单元格,合并list创建的多个row)
