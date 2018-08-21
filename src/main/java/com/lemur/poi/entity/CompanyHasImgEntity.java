@@ -6,11 +6,10 @@ import java.io.Serializable;
 
 public class CompanyHasImgEntity implements Serializable {
 
-
-    @Excel(name="公司名称",isImportField = "true_st")
+    @Excel(name="公司名称",width = 40,height = 40,isImportField = "true_st")
     private String name;
 
-    @Excel(name = "公司LOGO", type = 2 ,width = 40 , height = 20,imageType = 2)
+    @Excel(name = "公司LOGO", type = 2 ,imageType = 1,isImportField = "true_st")
     private String logo;
 
     @Excel(name = "公司地址",isImportField = "true_st")
@@ -38,5 +37,15 @@ public class CompanyHasImgEntity implements Serializable {
 
     public void setDes(String des) {
         this.des = des;
+    }
+
+    public CompanyHasImgEntity(String name, String logo, String des) {
+        this.name = name;
+        this.logo = logo;
+        this.des = des;
+    }
+
+    public CompanyHasImgEntity() {
+
     }
 }
